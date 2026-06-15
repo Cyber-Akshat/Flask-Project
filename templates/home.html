@@ -1,16 +1,144 @@
-{% extends "base.html" %}
-
-{% block content %}
-	<h1>Home Page</h1>
-{% endblock %}
-
-<!--<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Flask App</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Poppins',sans-serif;
+        }
+
+        body{
+            min-height:100vh;
+            background:linear-gradient(135deg,#0f172a,#1e293b,#2563eb);
+            color:white;
+        }
+
+        nav{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:25px 8%;
+        }
+
+        .logo{
+            font-size:2rem;
+            font-weight:700;
+        }
+
+        .buttons{
+            display:flex;
+            gap:15px;
+        }
+
+        .btn{
+            text-decoration:none;
+            padding:12px 28px;
+            border-radius:50px;
+            font-weight:600;
+            transition:.3s;
+        }
+
+        .login{
+            color:white;
+            border:2px solid rgba(255,255,255,.4);
+        }
+
+        .register{
+            background:white;
+            color:#2563eb;
+        }
+
+        .btn:hover{
+            transform:translateY(-3px);
+        }
+
+        .hero{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+            min-height:80vh;
+            padding:20px;
+        }
+
+        .hero-content{
+            max-width:800px;
+        }
+
+        h1{
+            font-size:4rem;
+            margin-bottom:20px;
+        }
+
+        p{
+            font-size:1.2rem;
+            margin-bottom:35px;
+            opacity:.9;
+        }
+
+        .hero-actions{
+            display:flex;
+            justify-content:center;
+            gap:20px;
+        }
+
+        .hero-actions a{
+            text-decoration:none;
+            padding:15px 35px;
+            border-radius:50px;
+            font-weight:600;
+        }
+
+        .primary{
+            background:white;
+            color:#2563eb;
+        }
+
+        .secondary{
+            border:2px solid white;
+            color:white;
+        }
+    </style>
 </head>
 <body>
 
+<nav>
+    <div class="logo">FlaskApp</div>
+
+    <div class="buttons">
+        <a href="{{ url_for('login') }}" class="btn login">Login</a>
+        <a href="{{ url_for('register') }}" class="btn register">Register</a>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Welcome to FlaskApp</h1>
+
+        <p>
+            A modern Flask application with secure authentication,
+            beautiful design, and scalable architecture.
+        </p>
+
+        <div class="hero-actions">
+            <a href="{{ url_for('register') }}" class="primary">
+                Get Started
+            </a>
+
+            <a href="{{ url_for('login') }}" class="secondary">
+                Login
+            </a>
+        </div>
+    </div>
+</section>
+
 </body>
-</html>-->
+</html>
