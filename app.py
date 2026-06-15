@@ -25,8 +25,23 @@ def login():
     return render_template("login.html")
 
 
-@app.route("/register")
+@app.route("/register", methods=["GET", "POST"])
 def register():
+    if request.method == "POST":
+        username = request.form.get("username")
+        email = request.form.get("email")
+        password = request.form.get("password")
+        confirm_password = request.form.get("confirm_password")
+
+        if password != confirm_password:
+            flash("Passwords do not match")
+            return redirect(url_for("register"))
+
+        # Save user to database here
+
+        flash("Account created successfully!")
+        return redirect(url_for("login"))
+
     return render_template("register.html")
 
 
